@@ -14,13 +14,16 @@
   /* Background color */
   --light-bg-cl: #ffffff;
   --dark-bg-cl: #2f303a;
+  --hero-bg-cl: rgba(47, 48, 58, 0.4);
   --accent-bg-cl: #2196f3;
   --gray-bg-cl: #f5f4fa;
+  --footer-soc-bg: rgba(255, 255, 255, 0.1);
 
   /* Others */
   --btn-radius: 4px;
   --header-brd: #ececec;
-  --filter-brd: #EEEEEE;
+  --filter-brd: #eeeeee;
+  --icon-cl: #afb1b8;
   --items: 3;
   --gap: 30px;
 }
@@ -73,7 +76,11 @@ img {
   /* outline: 2px solid greenyellow; */
 }
 
-/* HEADER */
+/**
+  |============================
+  | HEADER
+  |============================
+*/
 .header-container {
   display: flex;
   align-items: center;
@@ -88,9 +95,13 @@ img {
 .header-group {
   display: flex;
   gap: 50px;
+  color: var(--grey-txt-cl);
 }
 .header-nav-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -123,16 +134,26 @@ img {
 .header .link:focus {
   color: var(--accent-txt-cl);
 }
-.header .header-group {
-  color: var(--grey-txt-cl);
+.icons-header {
+  fill: currentColor;
 }
 .header .active {
   color: var(--accent-txt-cl);
 }
 
-/* HERO section */
+/**
+  |============================
+  | Hero section
+  |============================
+*/
 .hero {
+  max-width: 1600px;
+  height: 600px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 200px 0px;
+  background-image: linear-gradient(var(--hero-bg-cl), var(--hero-bg-cl)),
+    url(../images/hero/bg-hero.jpg);
   background-color: var(--dark-bg-cl);
   text-align: center;
 }
@@ -163,7 +184,12 @@ img {
   border-radius: var(--btn-radius);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
-/* Features section */
+
+/**
+  |============================
+  | Features section
+  |============================
+*/
 .features-list {
   display: flex;
   gap: var(--gap);
@@ -182,6 +208,15 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.features-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--gap);
+  width: 270px;
+  height: 120px;
+  background-color: var(--gray-bg-cl);
+}
 .features-uppertitle {
   margin-bottom: 10px;
   font-size: 14px;
@@ -198,8 +233,7 @@ img {
 .work-section {
   padding-top: 0;
 }
-.work-title,
-.team-title {
+.section-title {
   margin-bottom: 50px;
   font-size: 36px;
   line-height: calc(42 / 36);
@@ -210,7 +244,11 @@ img {
   gap: var(--gap);
 }
 
-/* Team section */
+/**
+  |============================
+  | Team section
+  |============================
+*/
 .team-section {
   background-color: var(--gray-bg-cl);
 }
@@ -239,10 +277,67 @@ img {
   font-weight: 500;
 }
 .team-desc {
+  margin-bottom: 16px;
   color: var(--grey-txt-cl);
 }
+/* Socials */
+.socials {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--icon-cl);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-bg-cl);
+  color: var(--light-txt-cl);
+}
+.socials-icon {
+  fill: currentColor;
+}
 
-/* Footer */
+/**
+  |============================
+  | Clients
+  |============================
+*/
+.clients-list {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap);
+}
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--icon-cl);
+  border: 1px solid var(--icon-cl);
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+}
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--accent-txt-cl);
+  border-color: var(--accent-bg-cl);
+}
+.clients-link {
+  fill: currentColor;
+}
+
+/**
+  |============================
+  | Footer
+  |============================
+*/
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -265,11 +360,29 @@ img {
 .footer-item-cl > .link {
   color: var(--white-txt-cl-60);
 }
-.footer .link:hover,
-.footer .link:focus {
+.footer-link:hover,
+.footer-link:focus {
   color: var(--accent-txt-cl);
 }
-
+.footer-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 70px;
+}
+.footer-contacts-title {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+}
+.footer-social-link {
+  background-color: var(--footer-soc-bg);
+  color: var(--light-txt-cl);
+}
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--accent-bg-cl);
+}
 /**
   |============================
   |PORTFOLIO 
@@ -298,6 +411,7 @@ img {
 .filter-btn:focus {
   color: var(--light-txt-cl);
   background-color: var(--accent-bg-cl);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .filter-list {
   display: flex;
@@ -321,4 +435,8 @@ img {
   font-size: 16px;
   line-height: calc(30 / 16);
   color: var(--grey-txt-cl);
+}
+.filter-link:hover,
+.filter-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
