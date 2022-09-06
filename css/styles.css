@@ -154,6 +154,9 @@ img {
   padding: 200px 0px;
   background-image: linear-gradient(var(--hero-bg-cl), var(--hero-bg-cl)),
     url(../images/hero/bg-hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   background-color: var(--dark-bg-cl);
   text-align: center;
 }
